@@ -1,4 +1,6 @@
-public class Circle implements iShape {
+package ISP;
+
+public class Circle implements iShape2D, iShape3D {
 
   private double radius;
   private String color;
@@ -14,8 +16,12 @@ public class Circle implements iShape {
   }
 
   @Override
+  public double volume() {
+    return Math.PI * Math.pow(radius, 3) * 3 / 4;
+  }
+
+  @Override
   public String toString() {
     return "Circle [ radius = " + radius + " см, color = " + color + " ]";
   }
-
 }
